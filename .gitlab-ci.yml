@@ -1,0 +1,64 @@
+stages:
+  - prepare
+  - lint
+  - build
+  - deploy
+
+# We use the latest Node image. This will make sure
+# Eyespot devs are using the latest Node as well
+# For issues arising when maintaining legacy websites
+# (unlikely due to Node's backward compatbility), specify
+# the image version for the given Node version
+image: node:latest
+
+# This folder is cached between builds
+# https://docs.gitlab.com/ce/ci/yaml/README.html#cache
+cache:
+  key: ${CI_COMMIT_REF_SLUG}
+  paths:
+    - ./node_modules/
+
+# Make sure package tree is valid
+install:
+  stage: prepare
+  tags:
+    - docker
+  script:
+    - yarn
+
+# Enforce linting, no failure allowed
+lint:
+  stage: lint
+  tags:
+    - docker
+  before_script:
+    - yarn
+  script:
+    - yarn lint
+  allow_failure: false
+
+# Build using Gatsby's builder
+build:
+  stage: build
+  tags:
+    - docker
+  before_script:
+    - yarn
+  script:
+    - export CI=
+    - ./node_modules/.bin/gatsby build
+
+  artifacts:
+    paths:
+      - ./public/
+
+deploy:
+  stage: deploy
+  dependencies:
+    - build
+  tags:
+    - docker
+  only:
+    - master
+  script:
+    - ./deploy.sh ./public/

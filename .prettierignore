@@ -17,6 +17,7 @@ node_modules/
 
 # misc
 .DS_Store
+CHANGELOG.md
 
 yarn-debug.log*
 yarn-error.log*

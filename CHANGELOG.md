@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.1.2](https://github.com/eyespot-agency/eyespot-starter-gatsby/compare/v0.1.1...v0.1.2) (2021-05-17)
+
+
+### Bug Fixes
+
+* Changes linting/formatting rule ([76d5c8f](https://github.com/eyespot-agency/eyespot-starter-gatsby/commit/76d5c8f1dceea44fb75bc6776939fdfc6c39de50))
+
 ### 0.1.1 (2021-05-12)
 
 

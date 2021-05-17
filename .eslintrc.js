@@ -40,7 +40,7 @@ module.exports = {
     quotes: [2, 'single', { avoidEscape: true }],
     semi: ['error', 'always'],
     'max-len': ['warn', { code: 120 }],
-    'object-curly-spacing': 1,
+    'object-curly-spacing': 0,
     'object-curly-newline': 0,
 
     /* ******************************* JAVASCRIPT ******************************* */

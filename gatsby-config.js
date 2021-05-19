@@ -1,3 +1,5 @@
+const path = require('path');
+
 module.exports = {
   siteMetadata: {
     title: 'Eyespot Starter Gatsby',
@@ -14,6 +16,12 @@ module.exports = {
       options: {
         name: 'images',
         path: `${__dirname}/src/images`,
+      },
+    },
+    {
+      resolve: 'gatsby-plugin-mdx',
+      options: {
+        defaultLayouts: { default: path.resolve('./src/shared/PostLayout') },
       },
     },
     {

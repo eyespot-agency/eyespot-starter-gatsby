@@ -10,7 +10,7 @@ import { Link } from 'gatsby';
 import { Container } from 'react-grid-system';
 
 // Page wrappers
-import Layout from '../shared/Layout';
+import Layout from '../shared/PageLayout';
 import Seo from '../shared/Seo';
 
 // Local page components

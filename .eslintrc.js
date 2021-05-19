@@ -31,7 +31,7 @@ module.exports = {
     ecmaVersion: 12,
     sourceType: 'module',
   },
-  plugins: ['react'],
+  plugins: ['react', 'eslint-plugin-prettier'],
   rules: {
     /* ******************************* FORMATTING ******************************* */
 
@@ -74,6 +74,7 @@ module.exports = {
       files: ['*.mdx'],
       rules: {
         semi: 0,
+        'react/jsx-indent': 0,
       },
     },
     {

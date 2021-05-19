@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [0.2.0](https://github.com/eyespot-agency/eyespot-starter-gatsby/compare/v0.1.2...v0.2.0) (2021-05-19)
+
+
+### Features
+
+* Added sample page/component scaffold + global SCSS style ([d6615b0](https://github.com/eyespot-agency/eyespot-starter-gatsby/commit/d6615b05d4dc64ca32fc7ce60ed6837650f24290))
+
 ### [0.1.2](https://github.com/eyespot-agency/eyespot-starter-gatsby/compare/v0.1.1...v0.1.2) (2021-05-17)
 
 

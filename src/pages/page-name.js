@@ -5,7 +5,6 @@
 // Packages
 import * as React from 'react';
 import { Link } from 'gatsby';
-import { StaticImage } from 'gatsby-plugin-image';
 
 // UI lib components
 import { Container } from 'react-grid-system';
@@ -15,35 +14,24 @@ import Layout from '../shared/Layout';
 import Seo from '../shared/Seo';
 
 // Local page components
-// @TODO Import local components here
+import SampleComponent from '../page-components/PageName/SampleComponent';
 
 /* -------------------------------------------------------------------------- */
 /*                                    Page                                    */
 /* -------------------------------------------------------------------------- */
 
-function IndexPage() {
+function PageName() {
   return (
     <Layout>
-      <Seo title="Home" />
+      <Seo title="Page two" />
       <Container>
-        <h1>Hi people</h1>
-        <p>Welcome to your new Gatsby site.</p>
-        <p>Now go build something great.</p>
-        <StaticImage
-          src="../images/gatsby-astronaut.png"
-          width={300}
-          quality={95}
-          formats={['AUTO', 'WEBP', 'AVIF']}
-          alt="A Gatsby astronaut"
-          style={{ marginBottom: '1.45rem' }}
-        />
-        <p>
-          <Link to="/page-2/">Go to page 2</Link>
-          <br />
-        </p>
+        <h1>Hi from the second page</h1>
+        <p>Welcome to page 2</p>
+        <SampleComponent />
+        <Link to="/">Go back to the homepage</Link>
       </Container>
     </Layout>
   );
 }
 
-export default IndexPage;
+export default PageName;

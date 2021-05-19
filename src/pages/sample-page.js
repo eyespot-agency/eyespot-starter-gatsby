@@ -14,17 +14,17 @@ import Layout from '../shared/PageLayout';
 import Seo from '../shared/Seo';
 
 // Local page components
-import SampleComponent from '../page-components/PageName/SampleComponent';
+import SampleComponent from '../page-components/SamplePage/SampleComponent';
 
 /* -------------------------------------------------------------------------- */
 /*                                    Page                                    */
 /* -------------------------------------------------------------------------- */
 
-function PageName() {
+function SamplePage() {
   return (
     <Layout>
-      <Seo title="Page two" />
-      <Container>
+      <Seo title="Sample page" />
+      <Container fluid>
         <h1>Hi from the second page</h1>
         <p>Welcome to page 2</p>
         <SampleComponent />
@@ -34,4 +34,4 @@ function PageName() {
   );
 }
 
-export default PageName;
+export default SamplePage;

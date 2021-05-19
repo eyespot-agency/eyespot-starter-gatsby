@@ -25,7 +25,7 @@ function IndexPage() {
   return (
     <Layout>
       <Seo title="Home" />
-      <Container>
+      <Container fluid>
         <h1>Hi people</h1>
         <p>Welcome to your new Gatsby site.</p>
         <p>Now go build something great.</p>

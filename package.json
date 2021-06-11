@@ -1,15 +1,21 @@
 {
   "name": "eyespot-starter-gatsby",
   "private": true,
-  "version": "0.2.0",
+  "version": "0.2.1",
   "description": "Eyespot Gatsby starter with essential Eyespot conventions and React/JavaScript standards",
   "repository": {
     "type": "git",
     "url": "git@github.com:eyespot-agency/eyespot-starter-gatsby.git"
   },
   "author": "EMIKETIC Technologies <contact@emiketic.com>",
-  "license": "Proprietary",
-  "homepage": "https://www.emiketic.com",
+  "license": "MIT",
+  "homepage": "https://www.eyespot.agency",
+  "keywords": [
+    "gatsby",
+    "react",
+    "gatsby starter",
+    "eyespot"
+  ],
   "bugs": {
     "url": "https://github.com/eyespot-agency/eyespot-starter-gatsby/issues",
     "email": "contact@emiketic.com"

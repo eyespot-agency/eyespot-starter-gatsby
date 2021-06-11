@@ -9,8 +9,11 @@ import { Link } from 'gatsby';
 // UI lib components
 import { Container } from 'react-grid-system';
 
-// Static Image
+/* ------------------------------ Static Image ------------------------------ */
 import { StaticImage } from 'gatsby-plugin-image';
+
+/* ---------------------------- Google analytics ---------------------------- */
+import { OutboundLink } from 'gatsby-plugin-google-analytics';
 
 // Page wrappers
 import Layout from '../shared/PageLayout';
@@ -43,6 +46,12 @@ function SamplePage() {
         <SampleComponent />
         <Link to="/">Go back to the homepage</Link>
       </Container>
+
+      <OutboundLink href="https://www.gatsbyjs.com/plugins/gatsby-plugin-google-analytics/">
+        OutboundLink component To make it easy to track clicks on outbound links
+        in Google Analytics, the plugin provides a component. Visit the Google
+        Analytics plugin page!
+      </OutboundLink>
     </Layout>
   );
 }

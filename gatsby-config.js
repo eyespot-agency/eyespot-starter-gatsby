@@ -2,10 +2,11 @@ const path = require('path');
 
 module.exports = {
   siteMetadata: {
-    title: 'advences',
-    description: 'Advences Technology for travel',
+    title: 'Eyespot Starter Gatsby',
+    description:
+      'Eyespot Gatsby starter with essential Eyespot conventions and React/JavaScript standards',
     author: 'EMIKETIC Technologies <contact@emiketic.com>',
-    siteUrl: 'http://www.advences.tn/',
+    siteUrl: 'http://eyespot.agency/',
   },
   plugins: [
     'gatsby-plugin-react-helmet',
@@ -46,7 +47,7 @@ module.exports = {
         background_color: '#663399',
         theme_color: '#663399',
         display: 'minimal-ui',
-        icon: 'src/images/advences-logo.jpg',
+        icon: 'src/images/gatsby-icon.png',
       },
     },
     {

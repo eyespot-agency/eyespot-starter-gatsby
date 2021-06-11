@@ -1,8 +1,8 @@
 {
-  "name": "advences-website",
+  "name": "eyespot-starter-gatsby",
   "private": true,
   "version": "0.2.1",
-  "description": "Gatsby website for project advences",
+  "description": "Eyespot Gatsby starter with essential Eyespot conventions and React/JavaScript standards",
   "repository": {
     "type": "git",
     "url": "git@github.com:eyespot-agency/eyespot-starter-gatsby.git"

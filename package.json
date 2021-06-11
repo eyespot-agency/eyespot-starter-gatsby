@@ -1,7 +1,7 @@
 {
   "name": "advences-website",
   "private": true,
-  "version": "0.0.0",
+  "version": "0.2.1",
   "description": "Gatsby website for project advences",
   "repository": {
     "type": "git",

@@ -11,7 +11,7 @@ import { useStaticQuery, graphql } from 'gatsby';
 import { Container } from 'react-grid-system';
 
 // Local UI components
-import Header from '../Header';
+import PageHeader from '../PageHeader';
 
 // Style
 import './index.scss';
@@ -20,12 +20,12 @@ import './index.scss';
 /*                                  Component                                 */
 /* -------------------------------------------------------------------------- */
 /**
- * Layout component that queries for data
+ * PageLayout component that queries for data
  * with Gatsby's useStaticQuery component
  *
  * See: https://www.gatsbyjs.com/docs/use-static-query/
  */
-function Layout({ children }) {
+function PageLayout({ children }) {
   /* ********************************** HOOKS ********************************* */
 
   const data = useStaticQuery(graphql`
@@ -42,15 +42,15 @@ function Layout({ children }) {
 
   return (
     <Container className="page-layout" fluid>
-      <Header siteTitle={data.site.siteMetadata?.title || 'Title'} />
+      <PageHeader siteTitle={data.site.siteMetadata?.title || 'Title'} />
       <main>{children}</main>
       <footer />
     </Container>
   );
 }
 
-Layout.propTypes = {
+PageLayout.propTypes = {
   children: PropTypes.node.isRequired,
 };
 
-export default Layout;
+export default PageLayout;

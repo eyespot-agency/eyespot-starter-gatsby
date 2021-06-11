@@ -2,11 +2,10 @@ const path = require('path');
 
 module.exports = {
   siteMetadata: {
-    title: 'Eyespot Starter Gatsby',
-    description:
-      'Eyespot Gatsby starter with essential Eyespot conventions and React/JavaScript standards',
+    title: 'advences',
+    description: 'Advences Technology for travel',
     author: 'EMIKETIC Technologies <contact@emiketic.com>',
-    siteUrl: 'http://eyespot.agency/',
+    siteUrl: 'http://www.advences.tn/',
   },
   plugins: [
     'gatsby-plugin-react-helmet',
@@ -28,7 +27,8 @@ module.exports = {
       resolve: 'gatsby-plugin-sass',
       options: {
         sassOptions: {
-          includePaths: ['./src/shared/styles/index'],
+          data: `@import "${__dirname}/src/shared/styles/index.scss";`,
+          includePaths: [path.resolve(__dirname, './src/shared/styles')],
         },
       },
     },
@@ -40,10 +40,11 @@ module.exports = {
         name: 'gatsby-starter-default',
         short_name: 'starter',
         start_url: '/',
+        // @TODO: Change with actual background and theme color
         background_color: '#663399',
         theme_color: '#663399',
         display: 'minimal-ui',
-        icon: 'src/images/gatsby-icon.png', // This path is relative to the root of the site.
+        icon: 'src/images/advences-logo.jpg',
       },
     },
     'gatsby-plugin-gatsby-cloud',

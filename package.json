@@ -1,21 +1,15 @@
 {
-  "name": "eyespot-starter-gatsby",
+  "name": "advences-website",
   "private": true,
-  "version": "0.2.0",
-  "description": "Eyespot Gatsby starter with essential Eyespot conventions and React/JavaScript standards",
+  "version": "0.0.0",
+  "description": "Gatsby website for project advences",
   "repository": {
     "type": "git",
     "url": "git@github.com:eyespot-agency/eyespot-starter-gatsby.git"
   },
   "author": "EMIKETIC Technologies <contact@emiketic.com>",
-  "license": "MIT",
-  "homepage": "https://www.eyespot.agency",
-  "keywords": [
-    "gatsby",
-    "react",
-    "gatsby starter",
-    "eyespot"
-  ],
+  "license": "Proprietary",
+  "homepage": "https://www.emiketic.com",
   "bugs": {
     "url": "https://github.com/eyespot-agency/eyespot-starter-gatsby/issues",
     "email": "contact@emiketic.com"
@@ -25,7 +19,7 @@
     "@mdx-js/react": "^1.6.22",
     "axios": "^0.21.1",
     "gatsby": "^3.3.1",
-    "gatsby-plugin-advanced-sitemap": "^1.6.0",
+    "gatsby-plugin-advanced-sitemap": "^2.0.0",
     "gatsby-plugin-gatsby-cloud": "^2.2.0",
     "gatsby-plugin-google-analytics": "^3.3.0",
     "gatsby-plugin-image": "^1.2.1",
@@ -45,10 +39,19 @@
     "sass": "^1.32.13"
   },
   "devDependencies": {
+    "@babel/core": "^7.14.3",
+    "@babel/eslint-parser": "^7.14.4",
+    "@babel/preset-react": "^7.13.13",
     "@commitlint/cli": "^12.1.3",
     "@commitlint/config-conventional": "^12.1.3",
-    "babel-eslint": "^10.1.0",
-    "eslint": "^7.26.0",
+    "@storybook/addon-actions": "^6.2.9",
+    "@storybook/addon-essentials": "^6.2.9",
+    "@storybook/addon-links": "^6.2.9",
+    "@storybook/preset-scss": "^1.0.3",
+    "@storybook/react": "^6.2.9",
+    "babel-loader": "^8.2.2",
+    "babel-plugin-remove-graphql-queries": "^3.6.0",
+    "eslint": "^7.28.0",
     "eslint-config-airbnb": "^18.2.1",
     "eslint-config-react-app": "^6.0.0",
     "eslint-plugin-import": "^2.22.1",
@@ -63,19 +66,20 @@
   },
   "scripts": {
     "postinstall": "husky install",
+    "start": "gatsby develop",
+    "test": "echo \"Write tests! -> https://gatsby.dev/unit-testing\" && exit 1",
     "build": "gatsby build",
-    "develop": "gatsby develop",
+    "clean": "gatsby clean",
+    "serve": "gatsby build && gatsby serve",
     "lint-check": "eslint --ext .js ./",
     "format-check": "prettier --check \"**/*.{js,jsx,ts,tsx,json,md}\"",
     "lint-fix": "eslint --ext .js ./ --fix",
     "format-fix": "prettier --write \"**/*.{js,jsx,ts,tsx,json,md}\"",
-    "start": "npm run develop",
-    "serve": "gatsby serve",
-    "clean": "gatsby clean",
-    "test": "echo \"Write tests! -> https://gatsby.dev/unit-testing\" && exit 1",
     "release": "standard-version",
     "release-minor": "standard-version --release-as minor",
     "release-major": "standard-version --release-as major",
-    "release-dry": "standard-version --dry-run"
+    "release-dry": "standard-version --dry-run",
+    "storybook": "NODE_ENV=production start-storybook -p 6006 -s public",
+    "build-storybook": "NODE_ENV=production build-storybook -s public"
   }
 }

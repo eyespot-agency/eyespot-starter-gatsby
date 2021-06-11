@@ -3,29 +3,29 @@
 /* -------------------------------------------------------------------------- */
 
 // Packages
-import * as React from 'react';
+import React from 'react';
+import PropTypes from 'prop-types';
 
 // UI lib components
 import { Container } from 'react-grid-system';
 
-// Page wrappers
-import PageLayout from '../shared/PageLayout';
-import Seo from '../shared/Seo';
-
-// Local page components
-// @TODO Import local components here
+// Style
+import './index.scss';
 
 /* -------------------------------------------------------------------------- */
-/*                                    Page                                    */
+/*                                  Component                                 */
 /* -------------------------------------------------------------------------- */
 
-function IndexPage() {
-  return (
-    <PageLayout>
-      <Seo title="Home" />
-      <Container fluid>Home page</Container>
-    </PageLayout>
-  );
+function SampleWidget({ someProp }) {
+  return <Container className="sample-widget">{someProp}</Container>;
 }
 
-export default IndexPage;
+SampleWidget.propTypes = {
+  someProp: PropTypes.string,
+};
+
+SampleWidget.defaultProps = {
+  someProp: '',
+};
+
+export default SampleWidget;

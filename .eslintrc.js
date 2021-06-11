@@ -24,9 +24,14 @@ module.exports = {
       fragment: 'Fragment',
     },
   },
+  parser: '@babel/eslint-parser',
   parserOptions: {
+    requireConfigFile: false,
     ecmaFeatures: {
       jsx: true,
+    },
+    babelOptions: {
+      presets: ['@babel/preset-react'],
     },
     ecmaVersion: 12,
     sourceType: 'module',
@@ -49,7 +54,7 @@ module.exports = {
     'arrow-body-style': 'off',
     'no-underscore-dangle': 'off',
     'no-param-reassign': 'warn',
-    'no-unused-vars': 'warn',
+    'no-unused-vars': 'error',
     'class-methods-use-this': 'warn',
     'prefer-destructuring': 'warn',
     'prefer-const': 'warn',
@@ -81,6 +86,12 @@ module.exports = {
       files: ['./gatsby-config.js'],
       rules: {
         'global-require': 0,
+      },
+    },
+    {
+      files: ['*.stories.*', 'stories.*'],
+      rules: {
+        'import/no-extraneous-dependencies': 0,
       },
     },
   ],

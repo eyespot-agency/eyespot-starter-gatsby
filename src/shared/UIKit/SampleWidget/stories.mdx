@@ -1,0 +1,19 @@
+import { Meta, Story, Canvas } from '@storybook/addon-docs/blocks';
+
+import SamplWidget from './index';
+
+<Meta title="UIKit/SampleWidget" component={SampleWidget} />
+
+# Sample widget
+
+Stories for a `SampleWidget`.
+
+<Canvas>
+  <Story name="default">
+    <SampleComponent />
+  </Story>
+  <Story name="valueAssigned">
+    <SampleComponent someProp="Some prop value" />
+  </Story>
+
+</Canvas>

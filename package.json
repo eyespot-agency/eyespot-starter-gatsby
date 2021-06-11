@@ -1,7 +1,7 @@
 {
   "name": "eyespot-starter-gatsby",
   "private": true,
-  "version": "0.2.1",
+  "version": "0.2.0",
   "description": "Eyespot Gatsby starter with essential Eyespot conventions and React/JavaScript standards",
   "repository": {
     "type": "git",

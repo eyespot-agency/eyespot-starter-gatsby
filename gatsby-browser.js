@@ -4,5 +4,5 @@
  * See: https://www.gatsbyjs.com/docs/browser-apis/
  */
 
-// Imports global styles
+// Imports themes and global styles
 import './src/shared/styles/index.scss';

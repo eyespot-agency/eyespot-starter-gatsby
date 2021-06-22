@@ -1,6 +1,10 @@
-@import './variables.scss';
+// Remove next line when using site theme:
 @import './theme-gatsby-default.scss';
+
+// Uncommment next line when using site theme:
+// @import './theme.scss';
+
 @import './global.scss';
 
-// Add specific stylesheets below
-// Ex: @import './dark-theme.scss';
+// // Add specific stylesheets below
+// // Ex: @import './dark-theme.scss';

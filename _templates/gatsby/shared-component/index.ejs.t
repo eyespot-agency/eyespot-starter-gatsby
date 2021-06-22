@@ -1,3 +1,9 @@
+---
+to: "<%= `src/shared/UIKit/${h.changeCase.pascal(name)}/index.js`  %>"
+---
+<% const componentName = h.changeCase.pascal(name) -%>
+<% const componentPath = h.inflection.dasherize(h.inflection.underscore(name)) -%>
+<% const componentTitle = h.inflection.humanize(h.inflection.underscore(name)) -%>
 /* -------------------------------------------------------------------------- */
 /*                                Dependencies                                */
 /* -------------------------------------------------------------------------- */
@@ -25,7 +31,7 @@ import './index.scss';
 /*                                  Component                                 */
 /* -------------------------------------------------------------------------- */
 
-function SampleComponent({ name, radius }) {
+function <%= componentName  %>({ name, radius }) {
   /* ******************************** CONSTANTS ******************************* */
 
   const PI = 3.14;
@@ -64,7 +70,7 @@ function SampleComponent({ name, radius }) {
   /* ******************************** RENDERING ******************************* */
 
   return (
-    <Container className="sample-component" fluid>
+    <Container className="<%= componentPath  %>" fluid>
       <Row className="title-section" debug>
         <Col debug>{name}</Col>
         <Col debug>
@@ -79,13 +85,13 @@ function SampleComponent({ name, radius }) {
   );
 }
 
-SampleComponent.propTypes = {
+<%= componentName  %>.propTypes = {
   name: PropTypes.string.isRequired,
   radius: PropTypes.number,
 };
 
-SampleComponent.defaultProps = {
+<%= componentName  %>.defaultProps = {
   radius: 0,
 };
 
-export default SampleComponent;
+export default <%= componentName  %>;

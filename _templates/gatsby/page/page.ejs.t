@@ -1,3 +1,9 @@
+---
+to: src/pages/<%= h.inflection.dasherize(h.inflection.underscore(name)) %>.js
+---
+<% const pageName = h.changeCase.pascal(name) -%>
+<% const pagePath = h.inflection.dasherize(h.inflection.underscore(name)) -%>
+<% const pageTitle = h.inflection.humanize(h.inflection.underscore(name)) -%>
 /* -------------------------------------------------------------------------- */
 /*                                Dependencies                                */
 /* -------------------------------------------------------------------------- */
@@ -6,34 +12,29 @@
 import * as React from 'react';
 import { Link } from 'gatsby';
 
-// UI lib components
+// Lib UI components
 import { Container } from 'react-grid-system';
-
-/* ------------------------------ Static Image ------------------------------ */
 import { StaticImage } from 'gatsby-plugin-image';
 
-/* ---------------------------- Google analytics ---------------------------- */
-import { OutboundLink } from 'gatsby-plugin-google-analytics';
-
-// Page wrappers
-import Layout from '../shared/PageLayout';
+// Local UI components
+import PageLayout from '../shared/PageLayout';
 import Seo from '../shared/Seo';
+import SampleComponent from '../page-components/<%= pageName %>/SampleComponent';
 
-// Local page components
-import SampleComponent from '../page-components/SamplePage/SampleComponent';
+// Style
+import '../page-styles/<%= pageName %>.scss';
 
 /* -------------------------------------------------------------------------- */
 /*                                    Page                                    */
 /* -------------------------------------------------------------------------- */
 
-function SamplePage() {
+function <%= pageName %>() {
   return (
-    <Layout>
-      <Seo title="Sample page" />
-      <Container fluid>
+    <PageLayout>
+      <Seo title="<%= pageTitle %>" />
+      <Container className="<%= pagePath %>" fluid>
         <h1>Hi from the second page</h1>
         <p>Welcome to page 2</p>
-
         <StaticImage
           src="../images/gatsby-astronaut.png"
           alt="A kitten"
@@ -42,18 +43,11 @@ function SamplePage() {
           width={300}
           height={500}
         />
-
         <SampleComponent />
         <Link to="/">Go back to the homepage</Link>
       </Container>
-
-      <OutboundLink href="https://www.gatsbyjs.com/plugins/gatsby-plugin-google-analytics/">
-        OutboundLink component To make it easy to track clicks on outbound links
-        in Google Analytics, the plugin provides a component. Visit the Google
-        Analytics plugin page!
-      </OutboundLink>
-    </Layout>
+    </PageLayout>
   );
 }
 
-export default SamplePage;
+export default <%= pageName %>;

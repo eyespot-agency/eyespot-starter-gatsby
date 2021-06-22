@@ -26,15 +26,7 @@ module.exports = {
         defaultLayouts: { default: path.resolve('./src/shared/PostLayout') },
       },
     },
-    {
-      resolve: 'gatsby-plugin-sass',
-      options: {
-        sassOptions: {
-          data: `@import "${__dirname}/src/shared/styles/index.scss";`,
-          includePaths: [path.resolve(__dirname, './src/shared/styles')],
-        },
-      },
-    },
+    'gatsby-plugin-sass',
     'gatsby-transformer-sharp',
     'gatsby-plugin-sharp',
     {

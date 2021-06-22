@@ -15,6 +15,8 @@ import Seo from '../shared/Seo';
 // Local page components
 // @TODO Import local components here
 
+import '../page-styles/index.scss';
+
 /* -------------------------------------------------------------------------- */
 /*                                    Page                                    */
 /* -------------------------------------------------------------------------- */

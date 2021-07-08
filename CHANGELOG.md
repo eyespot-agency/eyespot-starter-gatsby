@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [0.5.0](https://github.com/eyespot-agency/eyespot-starter-gatsby/compare/v0.4.1...v0.5.0) (2021-07-08)
+
+
+### Features
+
+* Supports image rendering in both Storybook and runtime ([2c59c70](https://github.com/eyespot-agency/eyespot-starter-gatsby/commit/2c59c70024b2e405d71962fc274e99e7541988ba))
+
 ### [0.4.1](https://github.com/eyespot-agency/eyespot-starter-gatsby/compare/v0.4.0...v0.4.1) (2021-06-22)
 
 

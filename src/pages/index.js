@@ -8,12 +8,10 @@ import * as React from 'react';
 // UI lib components
 import { Container } from 'react-grid-system';
 
-// Page wrappers
+// UI local components
 import PageLayout from '../shared/PageLayout';
 import Seo from '../shared/Seo';
-
-// Local page components
-// @TODO Import local components here
+import Image from '../shared/Image';
 
 import '../page-styles/index.scss';
 
@@ -25,7 +23,9 @@ function IndexPage() {
   return (
     <PageLayout>
       <Seo title="Home" />
-      <Container fluid>Home page</Container>
+      <Container fluid>
+        <Image src="gatsby-astronaut.png" alt="An astronaut" />
+      </Container>
     </PageLayout>
   );
 }

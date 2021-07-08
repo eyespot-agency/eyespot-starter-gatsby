@@ -86,7 +86,7 @@
     "release-minor": "standard-version --release-as minor",
     "release-major": "standard-version --release-as major",
     "release-dry": "standard-version --dry-run",
-    "storybook": "NODE_ENV=production start-storybook -s ./ -p 6006 ",
-    "build-storybook": "NODE_ENV=production build-storybook -s ./"
+    "storybook": "NODE_ENV=production STORYBOOK=enabled start-storybook -s public -p 6006",
+    "build-storybook": "NODE_ENV=production build-storybook -s public"
   }
 }

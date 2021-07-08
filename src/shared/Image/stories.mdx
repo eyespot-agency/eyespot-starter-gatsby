@@ -1,0 +1,22 @@
+import { Meta, Story, Canvas } from '@storybook/addon-docs/blocks';
+
+import Image from './index';
+
+<Meta
+  title="UIKit/Image"
+  component={Image}
+/>
+
+# Image
+
+Stories for a `Image`.
+
+<Canvas>
+  <Story name="Name only">
+    <Image name="Some name" />
+  </Story>
+  <Story name="Name with radius">
+    <Image name="Some name with radius" radius={4} />
+  </Story>
+</Canvas>
+

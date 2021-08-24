@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [0.6.0](https://github.com/eyespot-agency/eyespot-starter-gatsby/compare/v0.5.0...v0.6.0) (2021-08-24)
+
+
+### Features
+
+* Adds support for internationalization + updates docs + misc ([55fc3ce](https://github.com/eyespot-agency/eyespot-starter-gatsby/commit/55fc3ce14e5d6aee056b6bdaac5e2a3955ca2abf))
+
 ## [0.5.0](https://github.com/eyespot-agency/eyespot-starter-gatsby/compare/v0.4.1...v0.5.0) (2021-07-08)
 
 

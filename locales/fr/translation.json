@@ -1,0 +1,13 @@
+{
+  "a": "Holazzzzz",
+  "semantics": {
+    "yes": "Yes",
+    "no": "No"
+  },
+  "layout": {
+    "header": {
+      "en": "English",
+      "fr": "Français"
+    }
+  }
+}

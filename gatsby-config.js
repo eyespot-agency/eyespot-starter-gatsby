@@ -9,8 +9,9 @@ module.exports = {
     siteUrl: 'http://eyespot.agency/',
   },
   plugins: [
-    'gatsby-plugin-react-helmet',
     'gatsby-plugin-image',
+    'gatsby-plugin-sass',
+    'gatsby-plugin-react-helmet',
     'gatsby-plugin-sharp',
     'gatsby-transformer-sharp',
     {
@@ -21,14 +22,41 @@ module.exports = {
       },
     },
     {
+      resolve: 'gatsby-source-filesystem',
+      options: {
+        name: 'locale',
+        path: `${__dirname}/locales`,
+      },
+    },
+    {
+      resolve: 'gatsby-plugin-react-i18next',
+      options: {
+        // Option name in gatsby-source-filesystem
+        localeJsonSourceName: 'locale',
+        languages: ['en', 'fr'],
+        defaultLanguage: 'en',
+        // Site URL must provided with HTTPS (when using Helmet)
+        siteUrl: 'https://example.com/',
+        i18nextOptions: {
+          interpolation: {
+            escapeValue: false,
+          },
+          nsSeparator: false,
+        },
+        pages: [
+          {
+            matchPath: '/:lang?/:uid',
+            getLanguageFromPath: true,
+          },
+        ],
+      },
+    },
+    {
       resolve: 'gatsby-plugin-mdx',
       options: {
         defaultLayouts: { default: path.resolve('./src/shared/PostLayout') },
       },
     },
-    'gatsby-plugin-sass',
-    'gatsby-transformer-sharp',
-    'gatsby-plugin-sharp',
     {
       resolve: 'gatsby-plugin-manifest',
       options: {

@@ -1,0 +1,12 @@
+{
+  "semantics": {
+    "yes": "Oui",
+    "no": "Non"
+  },
+  "layout": {
+    "header": {
+      "en": "English",
+      "fr": "Français"
+    }
+  }
+}

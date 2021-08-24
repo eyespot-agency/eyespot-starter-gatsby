@@ -1,105 +1,148 @@
-<!-- AUTO-GENERATED-CONTENT:START (STARTER) -->
-<p align="center">
-  <a href="https://www.gatsbyjs.com">
-    <img alt="Gatsby" src="https://www.gatsbyjs.com/Gatsby-Monogram.svg" width="60" />
-  </a>
-</p>
 <h1 align="center">
-  Gatsby's default starter
+  Eyespot Starter Gatsby
 </h1>
 
-Kick off your project with this default boilerplate. This starter ships with the main Gatsby configuration files you might need to get up and running blazing fast with the blazing fast app generator for React.
+Gatsby starter reflecting Eyespot Agency standards and conventions. Powered by [`hygen-emiketic-react`](https://www.npmjs.com/package/hygen-emiketic-react) for file templating and scaffolding.
 
-_Have another more specific idea? You may want to check out our vibrant collection of [official and community-created starters](https://www.gatsbyjs.com/docs/gatsby-starters/)._
+# Essential rules
 
-## 🚀 Quick start
+- Code must be linted and formatted
+- Do not leave irrelevant trailing comments or commented code blocks
+- Do not leave unused files or assets
+- No inline style (except for less common instances when style linked to runtime logic)
+- Image sizes must be web web friendly (max 300kb unless rendered in a special visio mode)
+- Use Eyespot's `<Image />` to maximize quality controls in both build time and Storybook runtime
+- Don't use `eslint-disable` nor change config files for linting and formatting (except for rare agreed exceptions)
+- Code must be pushed whenever possible, at least once every worked days
+- Make sure code is tested both in dev and build mode before submitting to CI/CD `gatsby build && gatsby serve`
+- Make sure metadata is nice and sweet (favicon, SEO titles/desc, path names...etc.)
+- Path names must be SEO friendly, sluggified localized when needed
+- Make sure you test your output on actual mobile devices and not just on in-browser phone screen emulators. To test your code on an actual device prior to CI/CD, use a tunnel like `ngrok`. Signup, install then `ngrok http -host-header="localhost:8000" 8000`
+- A website is considered incomplete as long as it's not W3C compliant (or almost compliant). Use the W3C validator.
+- A website isn't considered efficient until at least Lighthouse says so (perf, SEO, image sizes...etc.).
 
-1.  **Create a Gatsby site.**
+# Setup
 
-    Use the Gatsby CLI to create a new site, specifying the default starter.
+## Prerequisites
 
-    ```shell
-    # create a new Gatsby site using the default starter
-    gatsby new my-default-starter https://github.com/gatsbyjs/gatsby-starter-default
-    ```
+- Install `hygen` globally
+- Make sure you have an up-to-date NodeJS version (an LTS)
+- Prefer Unix-based environments to Windows
+- Preferably VSCode with recommended extensions supplied in `.vscode/extensions`
 
-1.  **Start developing.**
+## Website setup
 
-    Navigate into your new site’s directory and start it up.
+Use the Gatsby CLI to create a new site, specifying the Eyespot starter
 
-    ```shell
-    cd my-default-starter/
-    gatsby develop
-    ```
+```shell
+# create a new Gatsby site using the Eyespot starter
+gatsby new website-repo-slug-name https://github.com/eyespot-agency/eyespot-starter-gatsby
+```
 
-1.  **Open the source code and start editing!**
+Start website in developer mode
 
-    Your site is now running at `http://localhost:8000`!
+```shell
+cd website-repo-slug-name/
+yarn start # or gatsby develop
+```
 
-    _Note: You'll also see a second link: _`http://localhost:8000/___graphql`_. This is a tool you can use to experiment with querying your data. Learn more about using this tool in the [Gatsby tutorial](https://www.gatsbyjs.com/tutorial/part-five/#introducing-graphiql)._
+**Important note** When adding dependencies or updating them, use `yarn` and not `npm`
 
-    Open the `my-default-starter` directory in your code editor of choice and edit `src/pages/index.js`. Save your changes and the browser will update in real time!
+# Generating conventional code templates
 
-## 🚀 Quick start (Gatsby Cloud)
+With `hygen` installed and the website project dependencies installed, navigate to the website working directory and type
 
-Deploy this starter with one click on [Gatsby Cloud](https://www.gatsbyjs.com/cloud/):
+## Adding a page
 
-[<img src="https://www.gatsbyjs.com/deploynow.svg" alt="Deploy to Gatsby Cloud">](https://www.gatsbyjs.com/dashboard/deploynow?url=https://github.com/gatsbyjs/gatsby-starter-default)
+`hygen gatsby page SomePage`
 
-## 🧐 What's inside?
+This will add the following files:
 
-A quick look at the top-level files and directories you'll see in a Gatsby project.
+- `pages/some-page`: Gatsby standard page
+- `page-stories/SomePage.mdx`: Storybook markdown JS (MDX) based story file
+- `page-styles/SomePage.scss`: A `.scss` style file for the page with root selector defined as `some-page`
+
+## Adding a component
+
+### Page component
+
+`hygen gatsby component SomeComponent --page SomePage`
+
+This will create a folder for a component associated with the page `SomePage` under `/page-components/SomeComponent`. The folder will contain the following files:
+
+- `SomeComponent.js`: Standard component file
+- `SomeComponent.scss`: Standard `.scss` style file for the component imported with the component implementation file
+- `SomeComponent.stories.mdx`: MDX-based Storybook file for the component. Will be found in Storybook under the page group
+
+### Shared component
+
+`hygen gatsby component SomeWidget`
+
+This will create a folder for a shared component (reusable among pages and other components). The `SomeWidget` folder will contain:
+
+- `SomeWidget.js`: Standard component file
+- `SomeWidget.scss`: Standard `.scss` style file for the component imported with the component implementation file
+- `SomeWidget.stories.mdx`: MDX-based Storybook file for the component. Will be found in Storybook under the **UIKit** group
+
+# Folder structure
 
     .
-    ├── node_modules
     ├── src
-    ├── .gitignore
-    ├── .prettierrc
-    ├── gatsby-browser.js
-    ├── gatsby-config.js
-    ├── gatsby-node.js
-    ├── gatsby-ssr.js
-    ├── LICENSE
-    ├── package-lock.json
-    ├── package.json
-    └── README.md
+    ├────── pages => Contains Gatsby pages named with this pattern page-name.js
+    ├────── page-styles => Contains style files in .scss for Gatsby pages named with the corresponding page name
+    with this pattern PageName.scss
+    ├────── page-stories => Contains Storybook stories in .mdx for Gatsby pages named with the corresponding page name with this pattern PageName.stories.mdx
+    ├────── page-components => Contains components that are specific to a page named with the corresponding page name with this pattern PageName/ComponentName/ComponentName.js|.scss|stories.mdx
+    ├────── shared => Shared components, layouts (feel free to add your own extra layouts), helpers and global style
+    ├──────────── styles
+    ├─────────────────── theme.scsss => Theme global style which can use variables (see file below) as well
+    ├─────────────────── _variables.scss => All shared colors, dimensions, font features and visual effects should go here
+    ├─────────────────── global.scsss => Other globals than theme globals. Minor but useful.
+    ├─────────────────── index.scc => **WARNING** Only touch to use/enable a theme over another
+    ├─────────────────── theme-gatsby-default.scsss => Leave as is (for debugging purposes)
+    ├──────────── Helpers => Add any redundant logic, driver logic, decoupled code...etc. here
+    .
+    .
+    .
+    ├── package.json => WARNING: You must inform project manager on the project group chat when installing extra-dependencies or updating ones
+    ├
+    .
+    .
+    .
+    ├── gatsby-config.js => OK. Use for Gatsby configurations
+    ├── gatsby-browser.js => OK. Use for Gatsby configurations
+    ├── gatsby-ssr.js => OK. Use for Gatsby configurations only for specific projects with SSR
+    ├──
+    ├── ... several config files => DO NOT ALTER
+    └── ...
 
-1.  **`/node_modules`**: This directory contains all of the modules of code that your project depends on (npm packages) are automatically installed.
+# Linting and formatting
 
-2.  **`/src`**: This directory will contain all of the code related to what you will see on the front-end of your site (what you see in the browser) such as your site header or a page template. `src` is a convention for “source code”.
+- Uses ESLint and Prettier working in pair together
+- Linting and formatting are enforced (won't compile unless addressed)
+- Formatting/Linting is automatically processed on saving files. If linting errors remain unresolved, commit won't go through
+- In fact, linting and formatting tasks are also
+  installed as a pre-commit hook through Husky
 
-3.  **`.gitignore`**: This file tells git which files it should not track / not maintain a version history for.
+# Committing code
 
-4.  **`.prettierrc`**: This is a configuration file for [Prettier](https://prettier.io/). Prettier is a tool to help keep the formatting of your code consistent.
+- Follows the [_Conventional Committing_](https://www.conventionalcommits.org/en/v1.0.0/) standard
 
-5.  **`gatsby-browser.js`**: This file is where Gatsby expects to find any usage of the [Gatsby browser APIs](https://www.gatsbyjs.com/docs/browser-apis/) (if any). These allow customization/extension of default Gatsby settings affecting the browser.
+- Feature example: `git commit -m "feat: Closes ISS-1. Ability to login with Apple"`
+- Patch example: `git commit -m "fix: Closes ISS-2 and corrects scrolling bug"`
+- Major/Breaking change example: `git commit -m "BREAKING CHANGE: Updated website version"`
+- Combines feature and breaking change:
+- Major/Breaking change example:
 
-6.  **`gatsby-config.js`**: This is the main configuration file for a Gatsby site. This is where you can specify information about your site (metadata) like the site title and description, which Gatsby plugins you’d like to include, etc. (Check out the [config docs](https://www.gatsbyjs.com/docs/gatsby-config/) for more detail).
+  `git commit -m "feat: Closes ISS-1. Ability to login with Apple BREAKING CHANGE: Updated Gatsby version"`
 
-7.  **`gatsby-node.js`**: This file is where Gatsby expects to find any usage of the [Gatsby Node APIs](https://www.gatsbyjs.com/docs/node-apis/) (if any). These allow customization/extension of default Gatsby settings affecting pieces of the site build process.
+- Commits not impacting versioning:
 
-8.  **`gatsby-ssr.js`**: This file is where Gatsby expects to find any usage of the [Gatsby server-side rendering APIs](https://www.gatsbyjs.com/docs/ssr-apis/) (if any). These allow customization of default Gatsby settings affecting server-side rendering.
+  - Regular / casual example: `git commit -m "chore: ISS-4 Installed dependencies"`
+  - Refactoring example: `git commit -m "refactoring: Refactored component"`
+  - Other commit types: _build:, chore:, ci:, docs:, style:, refactor:, perf:, test_
 
-9.  **`LICENSE`**: This Gatsby starter is licensed under the 0BSD license. This means that you can see this file as a placeholder and replace it with your own license.
-
-10. **`package-lock.json`** (See `package.json` below, first). This is an automatically generated file based on the exact versions of your npm dependencies that were installed for your project. **(You won’t change this file directly).**
-
-11. **`package.json`**: A manifest file for Node.js projects, which includes things like metadata (the project’s name, author, etc). This manifest is how npm knows which packages to install for your project.
-
-12. **`README.md`**: A text file containing useful reference information about your project.
-
-## 🎓 Learning Gatsby
-
-Looking for more guidance? Full documentation for Gatsby lives [on the website](https://www.gatsbyjs.com/). Here are some places to start:
-
-- **For most developers, we recommend starting with our [in-depth tutorial for creating a site with Gatsby](https://www.gatsbyjs.com/tutorial/).** It starts with zero assumptions about your level of ability and walks through every step of the process.
-
-- **To dive straight into code samples, head [to our documentation](https://www.gatsbyjs.com/docs/).** In particular, check out the _Guides_, _API Reference_, and _Advanced Tutorials_ sections in the sidebar.
-
-## 💫 Deploy
-
-[Build, Deploy, and Host On The Only Cloud Built For Gatsby](https://www.gatsbyjs.com/cloud/)
-
-Gatsby Cloud is an end-to-end cloud platform specifically built for the Gatsby framework that combines a modern developer experience with an optimized, global edge network.
-
-<!-- AUTO-GENERATED-CONTENT:END -->
+- The standard is linted and Husky will prevent commits from going through if it's not compliant
+- Project managers/owners can release satisfying updates and issue version bumps thanks to [standard-version](https://github.com/conventional-changelog/standard-version) by running `yarn release`. This will generate:
+- Appropriate tags based on the conventional commit history
+- An aggregated `CHANGELOG.md` file update.

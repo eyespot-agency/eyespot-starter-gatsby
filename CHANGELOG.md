@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.6.1](https://github.com/eyespot-agency/eyespot-starter-gatsby/compare/v0.6.0...v0.6.1) (2021-08-24)
+
+
+### Bug Fixes
+
+* Updates hygen page template ([f3819a4](https://github.com/eyespot-agency/eyespot-starter-gatsby/commit/f3819a459e55ccff78a537e4f1776afa78dc78ed))
+
 ## [0.6.0](https://github.com/eyespot-agency/eyespot-starter-gatsby/compare/v0.5.0...v0.6.0) (2021-08-24)
 
 

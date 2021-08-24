@@ -10,15 +10,16 @@ to: src/pages/<%= h.inflection.dasherize(h.inflection.underscore(name)) %>.js
 
 // Packages
 import * as React from 'react';
-import { Link } from 'gatsby';
+import { Link, graphql } from 'gatsby';
+import { useTranslation, Trans } from 'gatsby-plugin-react-i18next';
 
 // Lib UI components
 import { Container } from 'react-grid-system';
-import { StaticImage } from 'gatsby-plugin-image';
 
 // Local UI components
 import PageLayout from '../shared/PageLayout';
 import Seo from '../shared/Seo';
+import Image from '../shared/Image';
 import SampleComponent from '../page-components/<%= pageName %>/SampleComponent';
 
 // Style
@@ -29,25 +30,43 @@ import '../page-styles/<%= pageName %>.scss';
 /* -------------------------------------------------------------------------- */
 
 function <%= pageName %>() {
+  /* ********************************** HOOKS ********************************* */
+
+  // Localization
+  const { t } = useTranslation();
+
+  /* ******************************** RENDERING ******************************* */
   return (
     <PageLayout>
       <Seo title="<%= pageTitle %>" />
       <Container className="<%= pagePath %>" fluid>
-        <h1>Hi from the second page</h1>
-        <p>Welcome to page 2</p>
-        <StaticImage
-          src="../images/gatsby-astronaut.png"
-          alt="A kitten"
-          placeholder="blurred"
-          layout="fixed"
-          width={300}
-          height={500}
-        />
+        <h1>{t('title')}</h1>
+        <Trans>title</Trans>
+        <Image src="gatsby-astronaut.png" alt="An astronaut" />
         <SampleComponent />
         <Link to="/">Go back to the homepage</Link>
       </Container>
     </PageLayout>
   );
 }
+
+export const query = graphql`
+  query ($language: String!) {
+    locales: allLocale(
+      filter: {
+        ns: { in: ["<%= pageName %>", "Common"] }
+        language: { eq: $language }
+      }
+    ) {
+      edges {
+        node {
+          ns
+          data
+          language
+        }
+      }
+    }
+  }
+`;
 
 export default <%= pageName %>;

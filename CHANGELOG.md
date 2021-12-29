@@ -2,6 +2,34 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [0.7.0](https://github.com/eyespot-agency/eyespot-starter-gatsby/compare/v0.6.1...v0.7.0) (2021-12-29)
+
+
+### Features
+
+* Add htaccess plugin with it's necessary opts ([58d4188](https://github.com/eyespot-agency/eyespot-starter-gatsby/commit/58d41885200a80dd4f36504ab044e9f82bee6948))
+* Closes [#8](https://github.com/eyespot-agency/eyespot-starter-gatsby/issues/8), supports native font preloading ([2c3f43b](https://github.com/eyespot-agency/eyespot-starter-gatsby/commit/2c3f43b5504ee988ba1e0b78890ac1754c872edf))
+* Stable dep. update + scrip update ([75e256d](https://github.com/eyespot-agency/eyespot-starter-gatsby/commit/75e256dd187a7f12b8f6c0d7bbd90492a037492f))
+
+
+### Bug Fixes
+
+* Fixes prettier cofig ([c5c96e7](https://github.com/eyespot-agency/eyespot-starter-gatsby/commit/c5c96e7ae469ad30b437c00151623ca03514360f))
+
+### [0.6.2](https://github.com/eyespot-agency/eyespot-starter-gatsby/compare/v0.6.1...v0.6.2) (2021-12-29)
+
+
+### Features
+
+* Add htaccess plugin with it's necessary opts ([58d4188](https://github.com/eyespot-agency/eyespot-starter-gatsby/commit/58d41885200a80dd4f36504ab044e9f82bee6948))
+* Closes [#8](https://github.com/eyespot-agency/eyespot-starter-gatsby/issues/8), supports native font preloading ([2c3f43b](https://github.com/eyespot-agency/eyespot-starter-gatsby/commit/2c3f43b5504ee988ba1e0b78890ac1754c872edf))
+* Stable dep. update + scrip update ([75e256d](https://github.com/eyespot-agency/eyespot-starter-gatsby/commit/75e256dd187a7f12b8f6c0d7bbd90492a037492f))
+
+
+### Bug Fixes
+
+* Fixes prettier cofig ([c5c96e7](https://github.com/eyespot-agency/eyespot-starter-gatsby/commit/c5c96e7ae469ad30b437c00151623ca03514360f))
+
 ### [0.6.1](https://github.com/eyespot-agency/eyespot-starter-gatsby/compare/v0.6.0...v0.6.1) (2021-08-24)
 
 

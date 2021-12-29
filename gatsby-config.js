@@ -101,7 +101,6 @@ module.exports = {
       },
     },
     'gatsby-plugin-gatsby-cloud',
-    'gatsby-plugin-advanced-sitemap',
     {
       resolve: 'gatsby-plugin-htaccess',
       options: {

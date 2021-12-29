@@ -31,7 +31,7 @@ function IndexPage() {
   return (
     <PageLayout>
       <Seo title={t('title')} />
-      <Container fluid>
+      <Container className="index" fluid>
         <h1>{t('title')}</h1>
         <Trans>title</Trans>
         <Image src="eyespot-logo-extended.png" alt="An astronaut" />

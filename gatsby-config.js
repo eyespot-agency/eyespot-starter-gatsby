@@ -108,6 +108,41 @@ module.exports = {
         https: true,
       },
     },
+    {
+      resolve: 'gatsby-omni-font-loader',
+
+      options: {
+        /* Font loading mode */
+        mode: 'async',
+
+        /* Enable font loading listener to handle FOUT */
+        enableListener: true,
+
+        /* Preconnect URL-s. This example is for Google Fonts */
+        // @TODO: Uncomment for web and Google Fonts preconnect: ['https://fonts.gstatic.com'],
+
+        /* Self-hosted fonts config. Add font files and font CSS files to "static" folder */
+        custom: [
+          {
+            /* Exact name of the font as defied in @font-face CSS rule */
+            name: ['Licorice'],
+            /* Path to the font CSS file inside the "static" folder with @font-face definition */
+            file: '/fonts/Licorice-Regular.ttf',
+          },
+        ],
+
+        /* Web fonts. File link should point to font CSS file. */
+        // @TODO: Un comment for web and google fonts
+        // web: [
+        //   {
+        //     /* Exact name of the font as defied in @font-face CSS rule */
+        //     name: 'Staatliches',
+        //     /* URL to the font CSS file with @font-face definition */
+        //     file: 'https://fonts.googleapis.com/css2?family=Staatliches',
+        //   },
+        // ],
+      },
+    },
     // this (optional) plugin enables Progressive Web App + Offline functionality
     // To learn more, visit: https://gatsby.dev/offline
     // `gatsby-plugin-offline`,

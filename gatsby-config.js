@@ -100,7 +100,6 @@ module.exports = {
         cookieDomain: 'example.com',
       },
     },
-    'gatsby-plugin-gatsby-cloud',
     'gatsby-plugin-advanced-sitemap',
     {
       resolve: 'gatsby-plugin-htaccess',

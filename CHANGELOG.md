@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [0.8.0](https://github.com/eyespot-agency/eyespot-starter-gatsby/compare/v0.7.0...v0.8.0) (2022-04-13)
+
+
+### Features
+
+* Upgrades deps + storybook + sb webpack builder ([6b54ed0](https://github.com/eyespot-agency/eyespot-starter-gatsby/commit/6b54ed076079bd1b4098a4d759c974ac7e1ab4fd))
+
 ## [0.7.0](https://github.com/eyespot-agency/eyespot-starter-gatsby/compare/v0.6.1...v0.7.0) (2021-12-29)
 
 
